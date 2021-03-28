@@ -8,7 +8,7 @@ class Cider < EmacsFormula
   head "https://github.com/clojure-emacs/cider.git"
 
   depends_on EmacsRequirement => "24.4"
-  depends_on :java => ["1.7+", :run]
+  depends_on "openjdk"
 
   depends_on "dunn/emacs/clojure-mode"
   depends_on "dunn/emacs/dash-emacs"
