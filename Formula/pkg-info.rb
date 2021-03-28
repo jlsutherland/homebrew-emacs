@@ -9,7 +9,7 @@ class PkgInfo < EmacsFormula
 
   depends_on EmacsRequirement => "24.1"
   depends_on "cask"
-  depends_on "dunn/emacs/epl"
+  depends_on "jlsutherland/homebrew-emacs/epl"
 
   def install
     system "make", "compile", "CASK=#{Formula["cask"].bin}/cask"
