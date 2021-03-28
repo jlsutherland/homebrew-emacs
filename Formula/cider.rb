@@ -10,12 +10,12 @@ class Cider < EmacsFormula
   depends_on EmacsRequirement => "24.4"
   depends_on "openjdk"
 
-  depends_on "dunn/emacs/clojure-mode"
-  depends_on "dunn/emacs/dash-emacs"
-  depends_on "dunn/emacs/pkg-info"
-  depends_on "dunn/emacs/queue-emacs"
-  depends_on "dunn/emacs/seq" if Emacs.version < Version.create("25")
-  depends_on "dunn/emacs/spinner-emacs"
+  depends_on "jlsutherland/homebrew-emacs/clojure-mode"
+  depends_on "jlsutherland/homebrew-emacs/dash-emacs"
+  depends_on "jlsutherland/homebrew-emacs/pkg-info"
+  depends_on "jlsutherland/homebrew-emacs/queue-emacs"
+  depends_on "jlsutherland/homebrew-emacs/seq" if Emacs.version < Version.create("25")
+  depends_on "jlsutherland/homebrew-emacs/spinner-emacs"
 
   def install
     byte_compile Dir["*.el"]
@@ -25,12 +25,12 @@ class Cider < EmacsFormula
   test do
     (testpath/"test.el").write <<~EOS
       (add-to-list 'load-path "#{elisp}")
-      (add-to-list 'load-path "#{Formula["dunn/emacs/clojure-mode"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["dunn/emacs/dash-emacs"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["dunn/emacs/pkg-info"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["dunn/emacs/queue-emacs"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["dunn/emacs/seq"].opt_elisp}")
-      (add-to-list 'load-path "#{Formula["dunn/emacs/spinner-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["jlsutherland/homebrew-emacs/clojure-mode"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["jlsutherland/homebrew-emacs/dash-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["jlsutherland/homebrew-emacs/pkg-info"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["jlsutherland/homebrew-emacs/queue-emacs"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["jlsutherland/homebrew-emacs/seq"].opt_elisp}")
+      (add-to-list 'load-path "#{Formula["jlsutherland/homebrew-emacs/spinner-emacs"].opt_elisp}")
       (load "cider")
       (print cider-version)
     EOS
