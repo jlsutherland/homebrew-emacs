@@ -4,7 +4,7 @@ class PdfTools < EmacsFormula
   desc "Emacs support library for PDF files"
   homepage "https://github.com/politza/pdf-tools"
   url "https://github.com/politza/pdf-tools/archive/v0.90.tar.gz"
-  sha256 "663d22ce4a56c1eb75a329fa4ab5f77d92c030fcc1deaf4ec95b24356cf3351a"
+  sha256 "3840d71c112a820b91a336a913599865d96f35dd8cbdf3e8024e54f55ee75d24"
   head "https://github.com/politza/pdf-tools.git"
 
   depends_on EmacsRequirement => "24.4"
